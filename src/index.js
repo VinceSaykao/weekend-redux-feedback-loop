@@ -71,6 +71,7 @@ const getUnderstanding = (state = {
 
 
 
+
 const storeData = createStore(
     combineReducers({
         getFeeling,

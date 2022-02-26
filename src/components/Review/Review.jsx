@@ -3,57 +3,37 @@ import { Button } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { HashRouter as Router, Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 
 export default function Review() {
 
-    const getFeeling = useSelector((store) => store.getFeeling);
-    const getUnderstanding = useSelector((store) => store.getUnderstanding);
-    const getSupported = useSelector((store) => store.getSupported);
-    const getComments = useSelector((store) => store.getComments);
+    const getFeeling = useSelector(store => store.getFeeling);
+    const getUnderstanding = useSelector(store => store.getUnderstanding);
+    const getSupported = useSelector(store => store.getSupported);
+    const getComments = useSelector(store => store.getComments);
 
-    useEffect(() => {
-        console.log('in Effect');
-        getReview;
-    }, []);
+    const history = useHistory();
 
-       const getReview = (event) => {
-        console.log('Getting....Feels...');
-        axios({
-            method: 'GET',
-            url: '/api/feedback',
-        })
-            .then((response) => {
-                console.log(response.data)
-
-                // dispatch({
-                //     type: 'GET_FEELING',
-                //     payload: {
-                //         feeling: feeling,
-                //     }
-                //     // history.push('/understanding')
-                // });
-            })
-            .catch((error) => {
-                console.log('error', error);
-            })
-
-    }
+    // function postServer() {
+    //     axios.post
+    // }
 
 
+    console.log({getFeeling})
 
     return (
         <>
 
         <h1>Review</h1>
         <br></br>
-        <p>Feeling: </p>
+        <p>Feeling: {getFeeling.feeling}</p>
         <br></br>
-        <p>Understanding:</p>
+        <p>Understanding: {getUnderstanding.understanding}</p>
         <br></br>
-        <p>Supported:</p>
+        <p>Supported: {getSupported.supported}</p>
         <br></br>
-        <p>Comments:</p>
+        <p>Comments: {getComments.comments}</p>
         </>
     )
 
