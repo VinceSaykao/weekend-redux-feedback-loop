@@ -68,29 +68,7 @@ export default function Feeling() {
 
 
 
-    // const handleSubmit = (event) => {
-    //     console.log('Getting....Feels...');
-    //     // axios({
-    //     //     method: 'GET',
-    //     //     url: '/api/feedback',
-    //     // })
-    //     //     .then((response) => {
-    //     //         console.log(respose.data)
-
-    //             dispatch({
-    //                 type: 'GET_FEELING',
-    //                 payload: {
-    //                     feeling: feeling,
-    //                 }
-    //                 // history.push('/understanding')
-    //             });
-    //         // })
-    //         // .catch((error) => {
-    //         //     console.log('error', error);
-    //         // })
-
-    // }
-
+ 
 
 /*
 import TextField from '@material-ui/core/TextField'
