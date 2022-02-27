@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { HashRouter as Router, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import './Review.css';
 
 export default function Review() {
 
@@ -17,47 +18,53 @@ export default function Review() {
 
     function postServer() {
         console.log('Clicked!');
-        axios.post('/api/feedback', {getFeeling}, {getUnderstanding}, {getSupported}, {getComments})
-        .then(response => {
-            console.log('response', response);
+        axios.post('/api/feedback', { getFeeling }, { getUnderstanding }, { getSupported }, { getComments })
+            .then(response => {
+                console.log('response', response);
 
-            history.push('/success');
-        })
-        .catch(error => {
-            console.log('error in post', error);
-            alert('oh sh*t');
-        })
+                history.push('/success');
+            })
+            .catch(error => {
+                console.log('error in post', error);
+                alert('oh sh*t');
+            })
     }
 
 
-    console.log({getFeeling})
+    console.log({ getFeeling })
 
     return (
         <>
+            <div id="reviews">
 
-        <h1>Review</h1>
-        <br></br>
-        <p>Feeling: {getFeeling.feeling}</p>
-        <br></br>
-        <p>Understanding: {getUnderstanding.understanding}</p>
-        <br></br>
-        <p>Supported: {getSupported.supported}</p>
-        <br></br>
-        <p>Comments: {getComments.comments}</p>
+            </div>
+            <h1>Review</h1>
+            <div id="results">
+                <p>Feeling: {getFeeling.feeling}</p>
 
-        <Button
+                <p>Understanding: {getUnderstanding.understanding}</p>
+
+                <p>Supported: {getSupported.supported}</p>
+
+                <p>Comments: {getComments.comments}</p>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Button id = "next"
                     onClick={postServer}
                     variant='contained'
                     color='primary'
                     size='large'
-                    endIcon = {<KeyboardArrowRightIcon />}
+                    endIcon={<KeyboardArrowRightIcon />}
                 >
                     NEXT
                 </Button>
+            </div>
 
         </>
 
-        
+
     )
 
 }

@@ -3,7 +3,8 @@ import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { HashRouter as Router, Link, useHistory } from 'react-router-dom';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import './Understanding.css';
 
 
 export default function Understanding() {
@@ -33,10 +34,10 @@ export default function Understanding() {
             <Router>
 
 
-                <h1>Did You Understand Things Today?</h1>
+                <h1>Did You <span id="target">Understand</span> Things Today?</h1>
                 <br></br>
-
-                <TextField
+        <div id="footer">
+                <TextField id="understanding-input"
                     variant="outlined"
                     label="Understanding"
                     type="number"
@@ -46,7 +47,7 @@ export default function Understanding() {
                 />
                 <br></br>
 
-                <Button
+                <Button id = "next"
                     onClick={handleSubmit}
                     variant='contained'
                     color='primary'
@@ -55,6 +56,8 @@ export default function Understanding() {
                 >
                     NEXT
                 </Button>
+
+                </div>
 
 
 

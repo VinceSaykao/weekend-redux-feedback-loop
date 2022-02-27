@@ -6,13 +6,18 @@ body {
     text-align: center;
     background-image: url('flowers.jpeg');
     background-size: cover;
+    background-repeat: none;
+    overflow: hidden;
+    
+    
+    
 }
 
 h1 {
     left: 0;
     line-height: 100px;
     margin-top: -100px;
-    margin-left: 15px;
+    margin-left: 0px;
     position: absolute;
     text-align: left;
     top: 45%;
@@ -23,4 +28,59 @@ h1 {
     font-size: 100px;
     text-shadow: 1px 1px 1px #000000;
     font-family: "Roboto";
+    display: inline-block;
+    text-shadow: 0px 0px 1px #fff;
+    filter: blur(1px);
+}
+
+#feelings {
+ 
+    background-color: rgba(255, 255, 255, 0.178);
+    border-radius: 1px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 100px
+}
+
+#feelings-input {
+    text-align: center;
+    color: white;
+    height: 10px;
+    font-size: 30px;
+    text-shadow: 0px 0px 5px #fff;
+}
+
+
+#next {
+    background-color: rgb(255, 255, 255,0.5);
+    color: black;
+    width: 150px;
+    margin-top: 2px;
+    margin-left: 20px;
+    height: 45px;
+    border: 1px solid rgba(34, 33, 33, 0.5);
+}
+
+#next:hover {
+    background-color: rgba(255, 255, 255, 0.747);
+
+}
+
+#target {
+    color:rgba(95, 255, 234, 0.877);
+    text-shadow: 0px 0px 5px #fff;
+}
+
+#target:hover {
+    text-shadow: 0px 0px 10px #fff;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 100px;
+    background-color: rgba(255, 255, 255, 0.178);
 }

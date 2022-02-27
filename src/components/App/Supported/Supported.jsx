@@ -3,7 +3,8 @@ import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { HashRouter as Router, Link, useHistory } from 'react-router-dom';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import './Supported.css'
 
 
 
@@ -34,10 +35,10 @@ export default function Supported() {
             <Router>
 
 
-                <h1>Did You Understand Things Today?</h1>
+                <h1>How <span id="target">Supported</span> Did You Feel?</h1>
                 <br></br>
-
-                <TextField
+                <div id="footer">
+                <TextField id="supported-input"
                     variant="outlined"
                     label="Supported"
                     type="number"
@@ -47,7 +48,7 @@ export default function Supported() {
                 />
                 <br></br>
 
-                <Button
+                <Button id = "next"
                     onClick={handleSubmit}
                     variant='contained'
                     color='primary'
@@ -56,6 +57,7 @@ export default function Supported() {
                 >
                     NEXT
                 </Button>
+                </div>
 
 
 

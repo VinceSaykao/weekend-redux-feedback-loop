@@ -32,20 +32,19 @@ export default function Feeling() {
         <>
             <Router>
 
-                <h1>How Are You Feeling Today?</h1>
+                <h1>How Are You <span id="target">Feeling</span> Today?</h1>
                 <br></br>
-
-                <TextField
+                <div id="feelings">
+                <TextField id="feelings-input"
                     variant="outlined"
-                    label="Feelings"
+                    label="Number"
                     type="number"
                     value={feeling}
                     onChange={(event) => setFeeling(event.target.value)}
 
                 />
-                <br></br>
-               
-                <Button
+            <br></br>
+                <Button id = "next"
                     onClick={handleSubmit}
                     variant='contained'
                     color='primary'
@@ -54,6 +53,8 @@ export default function Feeling() {
                 >
                     NEXT
                 </Button>
+             
+                </div>
                
 
 

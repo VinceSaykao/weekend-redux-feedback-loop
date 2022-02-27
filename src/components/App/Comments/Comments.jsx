@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { HashRouter as Router, useHistory } from 'react-router-dom';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
+import './Comments.css'
 
 
 
@@ -31,7 +32,7 @@ export default function Comments() {
 
 
 
-    
+
     return (
         <>
             <Router>
@@ -39,27 +40,28 @@ export default function Comments() {
 
                 <h1>Any Comments?</h1>
                 <br></br>
+                <div id="footer">
+                    <TextField
+                        id="comments-input"
+                        variant="outlined"
+                        label="Comments"
+                        type="text"
+                        value={comments}
+                        onChange={(event) => setComments(event.target.value)}
 
-                <TextField
-                    variant="outlined"
-                    label="Comments"
-                    type="text"
-                    value={comments}
-                    onChange={(event) => setComments(event.target.value)}
+                    />
+                    <br></br>
 
-                />
-                <br></br>
-         
-                <Button
-                    onClick={handleSubmit}
-                    variant='contained'
-                    color='primary'
-                    size='large'
-                    endIcon = {<KeyboardArrowRightIcon />}
-                >
-                    NEXT
-                </Button>
-           
+                    <Button id = "next"
+                        onClick={handleSubmit}
+                        variant='contained'
+                        color='primary'
+                        size='large'
+                        endIcon={<KeyboardArrowRightIcon />}
+                    >
+                        NEXT
+                    </Button>
+                </div>
 
 
 
