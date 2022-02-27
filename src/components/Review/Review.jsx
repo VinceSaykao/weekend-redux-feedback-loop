@@ -15,9 +15,19 @@ export default function Review() {
 
     const history = useHistory();
 
-    // function postServer() {
-    //     axios.post
-    // }
+    function postServer() {
+        console.log('Clicked!');
+        axios.post('/api/feedback', {getFeeling}, {getUnderstanding}, {getSupported}, {getComments})
+        .then(response => {
+            console.log('response', response);
+
+            // history.push('/success');
+        })
+        .catch(error => {
+            console.log('error in post', error);
+            alert('oh sh*t');
+        })
+    }
 
 
     console.log({getFeeling})
@@ -34,7 +44,20 @@ export default function Review() {
         <p>Supported: {getSupported.supported}</p>
         <br></br>
         <p>Comments: {getComments.comments}</p>
+
+        <Button
+                    onClick={postServer}
+                    variant='contained'
+                    color='primary'
+                    size='large'
+                // startIcon={<SaveIcon />}
+                >
+                    NEXT
+                </Button>
+
         </>
+
+        
     )
 
 }
