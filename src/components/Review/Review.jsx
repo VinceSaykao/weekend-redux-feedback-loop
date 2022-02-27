@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { HashRouter as Router, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
-
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
 export default function Review() {
 
@@ -21,7 +21,7 @@ export default function Review() {
         .then(response => {
             console.log('response', response);
 
-            // history.push('/success');
+            history.push('/success');
         })
         .catch(error => {
             console.log('error in post', error);
@@ -50,7 +50,7 @@ export default function Review() {
                     variant='contained'
                     color='primary'
                     size='large'
-                // startIcon={<SaveIcon />}
+                    endIcon = {<KeyboardArrowRightIcon />}
                 >
                     NEXT
                 </Button>

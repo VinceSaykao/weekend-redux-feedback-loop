@@ -3,6 +3,7 @@ import { Button } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { HashRouter as Router, Link, useHistory } from 'react-router-dom';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 
 
 
@@ -51,7 +52,7 @@ export default function Supported() {
                     variant='contained'
                     color='primary'
                     size='large'
-                // startIcon={<SaveIcon />}
+                    endIcon = {<KeyboardArrowRightIcon />}
                 >
                     NEXT
                 </Button>

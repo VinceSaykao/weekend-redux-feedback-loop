@@ -2,25 +2,27 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
-router.get('/', (req,res) => {
-    console.log('GET /api/feedback');
-    pool.query('SELECT * from "feedbacks";')
-    .then((result) => {
-        res.send(result.rows);
-    })
-    .catch((error) => {
-        console.log('Error GET /api/feedbacks', error)
-        res.sendStatus(500);
-    });
-})
+// router.get('/', (req,res) => {
+//     console.log('GET /api/feedback');
+//     pool.query('SELECT * from "feedbacks";')
+//     .then((result) => {
+//         res.send(result.rows);
+//     })
+//     .catch((error) => {
+//         console.log('Error GET /api/feedbacks', error)
+//         res.sendStatus(500);
+//     });
+// })
 
 
 router.post('/', (req,res) => {
-        console.log('POST', req.body);
+        console.log('POSTed', req.body);
+        let feedback = req.body
         let queryText = (`INSERT INTO "feedbacks" ("feeling","understanding","supported","comments") VALUES
         ($1,$2,$3,$4);`);
-        pool.query(queryText, [req.body.feedbacks, req.body.understanding, req.body.supported,req.body.comments])
+        pool.query(queryText, [feedback.feeling,feedback.understanding,feedback.support,feedback.comments])
         .then((result) => {
+                console.log('nice', result)
                 res.sendStatus(201);
             })
             .catch((error) => {
