@@ -18,15 +18,19 @@ export default function Understanding() {
     const handleSubmit = (event) => {
         console.log('clicked');
         console.log({ understanding });
+        if (understanding> 0 && understanding < 11) {
+            dispatch({
+                type: 'GET_UNDERSTANDING',
+                payload: {
+                    understanding: understanding,
+                },
+            });
+            history.push('/Supported');
 
-        dispatch({
-            type: 'GET_UNDERSTANDING',
-            payload: {
-                understanding: understanding,
-            },
+        } else {
+            alert('Must be between 0-10')
+        }
 
-        });
-        history.push('/Supported');
     }; // end of handleSubmit 
 
     return (

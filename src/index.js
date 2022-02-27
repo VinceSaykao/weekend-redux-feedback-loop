@@ -8,24 +8,25 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 
 const getFeeling = (state = {
-feeling: 0,
-
-}, action) => {
+    feeling: [],
     
-    if (action.type === 'GET_FEELING') {
-        const {feeling} = action.payload;
-        return {
-            ...state,
-            feeling: Number(feeling),
+    }, action) => {
+        
+        if (action.type === 'GET_FEELING') {
+            const {feeling} = action.payload;
+            return {
+                ...state,
+                feeling: Number(feeling),
+            }
         }
+        return state;
     }
-    return state;
-}
+
 
 
 
 const getUnderstanding = (state = {
-    understanding: 0,
+    understanding: [],
     
     }, action) => {
         
@@ -40,7 +41,7 @@ const getUnderstanding = (state = {
     }
 
     const getSupported = (state = {
-        supported: 0,
+        supported: [],
         
         }, action) => {
             

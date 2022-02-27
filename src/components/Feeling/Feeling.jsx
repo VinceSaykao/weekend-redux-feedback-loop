@@ -17,15 +17,18 @@ export default function Feeling() {
     const handleSubmit = (event) => {
         console.log('clicked');
         console.log({ feeling });
-
-        dispatch({
-            type: 'GET_FEELING',
-            payload: {
-                feeling: feeling,
-            },
-
-        });
-        history.push('/Understanding');
+        if (feeling > 0 && feeling < 11) {
+        
+            dispatch({
+                type: 'GET_FEELING',
+                payload: {
+                    feeling: feeling,
+                },
+            });
+            history.push('/Understanding');
+        } else {
+            alert('Must be between 0-10')
+        }
     }; // end of handleSubmit 
 
     return (
@@ -35,27 +38,27 @@ export default function Feeling() {
                 <h1>How Are You <span id="target">Feeling</span> Today?</h1>
                 <br></br>
                 <div id="feelings">
-                <TextField id="feelings-input"
-                    variant="outlined"
-                    label="Number"
-                    type="number"
-                    value={feeling}
-                    onChange={(event) => setFeeling(event.target.value)}
+                    <TextField id="feelings-input"
+                        variant="outlined"
+                        label="Number"
+                        type="number"
+                        value={feeling}
+                        onChange={(event) => setFeeling(event.target.value)}
 
-                />
-            <br></br>
-                <Button id = "next"
-                    onClick={handleSubmit}
-                    variant='contained'
-                    color='primary'
-                    size='large'
-                    endIcon = {<KeyboardArrowRightIcon />}
-                >
-                    NEXT
-                </Button>
-             
+                    />
+                    <br></br>
+                    <Button id="next"
+                        onClick={handleSubmit}
+                        variant='contained'
+                        color='primary'
+                        size='large'
+                        endIcon={<KeyboardArrowRightIcon />}
+                    >
+                        NEXT
+                    </Button>
+
                 </div>
-               
+
 
 
 
@@ -70,7 +73,7 @@ export default function Feeling() {
 
 
 
- 
+
 
 /*
 import TextField from '@material-ui/core/TextField'

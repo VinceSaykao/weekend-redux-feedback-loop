@@ -40,13 +40,13 @@ export default function Review() {
             </div>
             <h1>Review</h1>
             <div id="results">
-                <p>Feeling: {getFeeling.feeling}</p>
+                <p id = "feeling-num">Feeling: {getFeeling.feeling}</p>
 
-                <p>Understanding: {getUnderstanding.understanding}</p>
+                <p id = "understanding-num">Understanding: {getUnderstanding.understanding}</p>
 
-                <p>Supported: {getSupported.supported}</p>
+                <p id = "supported-num">Supported: {getSupported.supported}</p>
 
-                <p>Comments: {getComments.comments}</p>
+                <p id = "comments-num">Comments: {getComments.comments}</p>
                 <br></br>
                 <br></br>
                 <br></br>

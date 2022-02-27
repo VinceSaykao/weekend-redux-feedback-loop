@@ -22,3 +22,8 @@ p {
     display: inline;
     margin: 0rem 2rem;
 }
+
+#feeling-num,#understanding-num,#supported-num,#comments-num {
+    background-color: rgba(255, 255, 255, 0.445);
+    border-radius: 10px;
+}

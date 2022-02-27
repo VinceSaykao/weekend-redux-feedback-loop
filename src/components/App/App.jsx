@@ -19,6 +19,9 @@ function App() {
       </header>
       <main>
         <Route path='/' exact>
+      <Success />
+      </Route>
+      <Route path='/Feeling' exact>
       <Feeling />
       </Route>
       <Route path='/Understanding' exact>
@@ -33,9 +36,7 @@ function App() {
       <Route path='/Review' exact>
       <Review />
       </Route>
-      <Route path='/Success' exact>
-      <Success />
-      </Route>
+      
       
       </main>
     </div>

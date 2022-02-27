@@ -10,12 +10,13 @@ export default function Success() {
     const history = useHistory();
     function homePage() {
         console.log('Click');
-        history.push('/');
+        history.push('/Feeling');
 
     }
 
     function handleFeedback() {
         console.log('clicked');
+        alert('HAHA... Click on "Different"')
     }
     return (
         <>
@@ -24,14 +25,14 @@ export default function Success() {
                     <h2>Dare.To.Be.<span id="different" onClick={homePage} alt="HomePage">Different</span></h2>
                     <br></br>
                     <Button id="feedback-button"
-                    onClick={handleFeedback}
-                    variant='contained'>Feedback</Button>
-                    
+                        onClick={handleFeedback}
+                        variant='contained'>Join The Experience</Button>
 
-    
+
+
                 </div>
-              
-              
+
+
 
             </Router>
         </>
