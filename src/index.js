@@ -55,7 +55,7 @@ const getUnderstanding = (state = {
         }
 
         const getComments = (state = {
-            comments: (''),
+            comments: ('None'),
             
             }, action) => {
                 

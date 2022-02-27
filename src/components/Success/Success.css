@@ -1,46 +1,51 @@
 #image1 {
-    background-image: url('Different.jpeg');
-    background-size: cover;
-    height: 1000px;
-    background-position: 0px -1150px;
-    z-index: -1;
-    overflow: hidden;
-    
+  background-image: url("Different.jpeg");
+  background-size: cover;
+  height: 1000px;
+  background-position: 0px -1150px;
+  z-index: -1;
+  overflow: hidden;
 }
 
 h2 {
-    font-size: 100px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    margin-bottom: 280px;
-    filter: blur(2.5px);
-    color: red;
-    text-shadow: 3px 3px 5px #fff;
+  font-size: 100px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 280px;
+  filter: blur(2.5px);
+  color: red;
+  text-shadow: 3px 3px 5px #fff;
 }
 
 #different {
-    color: rgba(59, 255, 59, 0.678);
-    text-shadow: 3px 5px 5px red;
-    background-color: rgb(252, 245, 245);
-    border-radius: 10px;
-    animation: animate 10s linear infinite;
+  color: rgba(59, 255, 59, 0.678);
+  text-shadow: 3px 5px 5px red;
+  background-color: rgb(252, 245, 245);
+  border-radius: 10px;
+  animation: animate 7s linear infinite;
 }
 
 #different:hover {
-   
-    color: black;
+  color: black;
 }
 
-@keyframes animate
-{
-  0% 
-  {
-    transform: rotate(0deg);
+@keyframes animate {
+  0% {
     filter: hue-rotate(0deg);
   }
   100% {
-      transform: rotate(360deg);
     filter: hue-rotate(360deg);
   }
+}
+
+#feedback-button {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 100px;
+    background-color: #4444;
+}
+
+#feedback-button:hover {
+    background-color: rgba(255, 255, 255, 0.479);
 }
