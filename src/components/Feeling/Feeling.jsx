@@ -13,7 +13,7 @@ export default function Feeling() {
     const [feeling, setFeeling] = useState('')
 
 
-
+    // When Next is clicked, push to reducer and then store, then move to understanding
     const handleSubmit = (event) => {
         console.log('clicked');
         console.log({ feeling });

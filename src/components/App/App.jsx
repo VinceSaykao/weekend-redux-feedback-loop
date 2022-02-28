@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
 import Feeling from '../Feeling/Feeling.jsx'
 import Understanding from '../Understanding/Understanding';

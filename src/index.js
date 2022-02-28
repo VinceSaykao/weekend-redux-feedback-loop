@@ -11,16 +11,14 @@ import { logger } from 'redux-logger';
 // HMM???
 // const getFeeling = (state =[], action) => {
 //     if (action.type === 'GET_FEELING') {
-//         return {
-//             ...state,
-//             feeling: action.payload
+//         state = { ...state, feeling: action.payload
 //         }
 //     }
 //     return state;
-// }
+// };
 
 
-
+// Feeling Reducer 
 const getFeeling = (state = {
     feeling: [],
     
@@ -38,7 +36,7 @@ const getFeeling = (state = {
 
 
 
-
+// Understanding Reducer
 const getUnderstanding = (state = {
     understanding: [],
     
@@ -54,6 +52,7 @@ const getUnderstanding = (state = {
         return state;
     }
 
+// Supported Reducer
     const getSupported = (state = {
         supported: [],
         
@@ -69,6 +68,7 @@ const getUnderstanding = (state = {
             return state;
         }
 
+// Comments Reducer
         const getComments = (state = {
             comments: ('None'),
             
@@ -86,7 +86,7 @@ const getUnderstanding = (state = {
 
 
 
-
+// Store to hold all reducers
 const storeData = createStore(
     combineReducers({
         getFeeling,

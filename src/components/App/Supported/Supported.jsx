@@ -15,19 +15,25 @@ export default function Supported() {
     const [supported, setSupported] = useState('')
 
 
-
+ // When Next is clicked, push to reducer and then store, then move to comments
     const handleSubmit = (event) => {
         console.log('clicked');
         console.log({ Supported });
 
-        dispatch({
-            type: 'GET_SUPPORTED',
-            payload: {
-                supported: supported,
-            },
+        if (supported > 0 && supported < 11) {
+        
+            dispatch({
+                type: 'GET_SUPPORTED',
+                payload: {
+                    supported: supported,
+                },
+            });
+            history.push('/Comments');
+        } else {
+            alert('Must be between 0-10')
+        }
 
-        });
-        history.push('/Comments');
+
     }; // end of handleSubmit 
 
     return (

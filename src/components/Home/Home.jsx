@@ -26,7 +26,14 @@ export default function Home() {
                     <br></br>
                     <Button id="feedback-button"
                         onClick={handleFeedback}
-                        variant='contained'>Join The Experience</Button>
+                
+                        variant='contained'
+                        endIcon = {<KeyboardArrowRightIcon />}
+                        >Join The Experience
+                        
+                        
+                        </Button>
+                        
 
 
 

@@ -13,7 +13,7 @@ export default function Success() {
         history.push('/Feeling');
 
     }
-
+    // when feedback is clicked, alert this
     function handleFeedback() {
         console.log('clicked');
         alert('HAHA... Click on "Amazing"')
@@ -26,7 +26,9 @@ export default function Success() {
                 <br></br>
                 <Button id="feedback-button"
                     onClick={handleFeedback}
-                    variant='contained'>Feedback</Button>
+                    variant='contained'
+                    endIcon = {<KeyboardArrowRightIcon />}
+                    >Feedback</Button>
 
 
 
@@ -40,14 +42,3 @@ export default function Success() {
     )
 
 };
-/*
-<Button id = "next"
-onClick={handleSubmit}
-variant='contained'
-color='primary'
-size='large'
-endIcon = {<KeyboardArrowRightIcon />}
->
-NEXT
-</Button>
-*/

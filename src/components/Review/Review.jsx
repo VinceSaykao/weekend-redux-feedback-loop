@@ -20,9 +20,10 @@ export default function Review() {
     console.log(getFeeling.feeling);
     console.log({getFeeling});
 
+    // axios post, sending data to database... and sends user to success page
     function postServer() {
         console.log('Clicked!');
-        axios.post('/api/feedback', getFeeling, getUnderstanding, getSupported, getComments) // why does it only send one? {getFeeling, getUnderstanding, getSupported, getComments} = null
+        axios.post('/api/feedback', {getFeeling, getUnderstanding, getSupported, getComments}) // why does it only send one? {getFeeling, getUnderstanding, getSupported, getComments} = null
             .then(response => {
                 console.log('response', response);
 

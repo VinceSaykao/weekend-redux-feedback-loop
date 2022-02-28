@@ -14,7 +14,7 @@ export default function Understanding() {
     const [understanding, setUnderstanding] = useState('')
 
 
-
+ // When Next is clicked, push to reducer and then store, then move to supported
     const handleSubmit = (event) => {
         console.log('clicked');
         console.log({ understanding });
