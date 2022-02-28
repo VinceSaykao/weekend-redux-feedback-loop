@@ -15,14 +15,18 @@ export default function Review() {
     const getComments = useSelector(store => store.getComments);
 
     const history = useHistory();
+    let packages = (getFeeling.feeling , getUnderstanding.understanding , getSupported.supported , getComments.comments)
+    console.log(packages);
+    console.log(getFeeling.feeling);
+    console.log({getFeeling});
 
     function postServer() {
         console.log('Clicked!');
-        axios.post('/api/feedback', { getFeeling }, { getUnderstanding }, { getSupported }, { getComments })
+        axios.post('/api/feedback', getFeeling, getUnderstanding, getSupported, getComments) // why does it only send one? {getFeeling, getUnderstanding, getSupported, getComments} = null
             .then(response => {
                 console.log('response', response);
 
-                history.push('/success');
+                history.push('/Success');
             })
             .catch(error => {
                 console.log('error in post', error);
@@ -31,7 +35,7 @@ export default function Review() {
     }
 
 
-    console.log({ getFeeling })
+    console.log({getFeeling})
 
     return (
         <>

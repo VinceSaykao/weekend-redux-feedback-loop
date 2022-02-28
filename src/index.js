@@ -7,6 +7,20 @@ import {Provider} from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 
+
+// HMM???
+// const getFeeling = (state =[], action) => {
+//     if (action.type === 'GET_FEELING') {
+//         return {
+//             ...state,
+//             feeling: action.payload
+//         }
+//     }
+//     return state;
+// }
+
+
+
 const getFeeling = (state = {
     feeling: [],
     
@@ -16,7 +30,7 @@ const getFeeling = (state = {
             const {feeling} = action.payload;
             return {
                 ...state,
-                feeling: Number(feeling),
+                feeling: (feeling),
             }
         }
         return state;
@@ -34,7 +48,7 @@ const getUnderstanding = (state = {
             const {understanding} = action.payload;
             return {
                 ...state,
-                understanding: Number(understanding),
+                understanding: (understanding),
             }
         }
         return state;
@@ -49,7 +63,7 @@ const getUnderstanding = (state = {
                 const {supported} = action.payload;
                 return {
                     ...state,
-                    supported: Number(supported),
+                    supported: (supported),
                 }
             }
             return state;

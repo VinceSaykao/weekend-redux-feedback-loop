@@ -1,11 +1,11 @@
-import './Success.css'
+import './Home.css'
 import { HashRouter as Router, Link, useHistory } from 'react-router-dom';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Button } from '@mui/material';
 
 
 
-export default function Success() {
+export default function Home() {
 
     const history = useHistory();
     function homePage() {
