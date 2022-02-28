@@ -61,7 +61,7 @@ const getComments = (state = [], action) => {
 //             const {feeling} = action.payload;
 //             return {
 //                 ...state,
-//                 feeling: (feeling),
+//                 feeling: feeling,
 //             }
 //         }
 //         return state;

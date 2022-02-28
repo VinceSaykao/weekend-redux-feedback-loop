@@ -34,8 +34,6 @@ export default function Review() {
     }
 
 
-
-
     return (
         <>
             <div id="reviews">
