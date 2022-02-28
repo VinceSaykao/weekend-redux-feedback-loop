@@ -98,7 +98,7 @@ const feedbackReducers = combineReducers({
     feeling: getFeeling,
     understanding: getUnderstanding,
     supported: getSupported,
-    comment: getComment
+    comment: getComments,
 });
 
 
