@@ -26,6 +26,30 @@ const getFeeling = (state = [], action) => {
     return state;
 }
 
+const getUnderstanding = (state = [], action) => {
+    // TODO - set book list with data from server
+    if (action.type === 'GET_UNDERSTANDING') {
+        return action.payload.understanding
+    }
+    return state;
+}
+
+const getSupported = (state = [], action) => {
+    // TODO - set book list with data from server
+    if (action.type === 'GET_SUPPORTED') {
+        return action.payload.supported
+    }
+    return state;
+}
+
+const getComments = (state = [], action) => {
+    // TODO - set book list with data from server
+    if (action.type === 'GET_COMMENTS') {
+        return action.payload.comments
+    }
+    return state;
+}
+
 
 // Feeling Reducer 
 // const getFeeling = (state = {
@@ -45,53 +69,53 @@ const getFeeling = (state = [], action) => {
 
 
 
-// Understanding Reducer
-const getUnderstanding = (state = {
-    understanding: [],
+// // Understanding Reducer
+// const getUnderstanding = (state = {
+//     understanding: [],
 
-}, action) => {
+// }, action) => {
 
-    if (action.type === 'GET_UNDERSTANDING') {
-        const { understanding } = action.payload;
-        return {
-            ...state,
-            understanding: (understanding),
-        }
-    }
-    return state;
-}
+//     if (action.type === 'GET_UNDERSTANDING') {
+//         const { understanding } = action.payload;
+//         return {
+//             ...state,
+//             understanding: (understanding),
+//         }
+//     }
+//     return state;
+// }
 
-// Supported Reducer
-const getSupported = (state = {
-    supported: [],
+// // Supported Reducer
+// const getSupported = (state = {
+//     supported: [],
 
-}, action) => {
+// }, action) => {
 
-    if (action.type === 'GET_SUPPORTED') {
-        const { supported } = action.payload;
-        return {
-            ...state,
-            supported: (supported),
-        }
-    }
-    return state;
-}
+//     if (action.type === 'GET_SUPPORTED') {
+//         const { supported } = action.payload;
+//         return {
+//             ...state,
+//             supported: (supported),
+//         }
+//     }
+//     return state;
+// }
 
-// Comments Reducer
-const getComments = (state = {
-    comments: ('None'),
+// // Comments Reducer
+// const getComments = (state = {
+//     comments: ('None'),
 
-}, action) => {
+// }, action) => {
 
-    if (action.type === 'GET_COMMENTS') {
-        const { comments } = action.payload;
-        return {
-            ...state,
-            comments: comments,
-        }
-    }
-    return state;
-}
+//     if (action.type === 'GET_COMMENTS') {
+//         const { comments } = action.payload;
+//         return {
+//             ...state,
+//             comments: comments,
+//         }
+//     }
+//     return state;
+// }
 
 // simplified 
 const feedbackReducers = combineReducers({

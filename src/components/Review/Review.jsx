@@ -10,22 +10,18 @@ import './Review.css';
 export default function Review() {
 
     // useSelector to recieve all reducers from store
-    const getFeeling = useSelector(store => store.getFeeling);
-    const getUnderstanding = useSelector(store => store.getUnderstanding);
-    const getSupported = useSelector(store => store.getSupported);
-    const getComments = useSelector(store => store.getComments);
+    const feeling = useSelector(store => store.getFeeling);
+    const understanding = useSelector(store => store.getUnderstanding);
+    const supported = useSelector(store => store.getSupported);
+    const comments = useSelector(store => store.getComments);
 
     const history = useHistory();
-    let packages = (getFeeling.feeling , getUnderstanding.understanding , getSupported.supported , getComments.comments)
-    console.log(packages);
-    console.log(getFeeling.feeling);
-    console.log({getFeeling});
-    console.log(getUnderstanding.understanding)
+
 
     // axios post, sending data to database... and sends user to success page
     function postServer() {
         console.log('Clicked!');
-        axios.post('/api/feedback', getFeeling) // why does it only send one? {getFeeling, getUnderstanding, getSupported, getComments} = null
+        axios.post('/api/feedback', { feeling , understanding , supported , comments }) // why does it only send one? {getFeeling, getUnderstanding, getSupported, getComments} = null
             .then(response => {
                 console.log('response', response);
 
@@ -38,7 +34,7 @@ export default function Review() {
     }
 
 
-    console.log({getFeeling})
+
 
     return (
         <>
@@ -47,13 +43,13 @@ export default function Review() {
             </div>
             <h1>Review</h1>
             <div id="results">
-                <p id = "feeling-num">Feeling: {getFeeling}</p>
+                <p id = "feeling-num">Feeling: {feeling}</p>
 
-                <p id = "understanding-num">Understanding: {getUnderstanding.understanding}</p>
+                <p id = "understanding-num">Understanding: {understanding}</p>
 
-                <p id = "supported-num">Supported: {getSupported.supported}</p>
+                <p id = "supported-num">Supported: {supported}</p>
 
-                <p id = "comments-num">Comments: {getComments.comments}</p>
+                <p id = "comments-num">Comments: {comments}</p>
                 <br></br>
                 <br></br>
                 <br></br>
