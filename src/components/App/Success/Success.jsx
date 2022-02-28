@@ -21,7 +21,7 @@ export default function Success() {
     return (
         <>
             <Router>
-
+        
                 <h2>You.Are: <span id="different" onClick={homePage} alt="HomePage">Amazing</span></h2>
                 <br></br>
                 <Button id="feedback-button"
