@@ -9,6 +9,7 @@ import './Review.css';
 
 export default function Review() {
 
+    // useSelector to recieve all reducers from store
     const getFeeling = useSelector(store => store.getFeeling);
     const getUnderstanding = useSelector(store => store.getUnderstanding);
     const getSupported = useSelector(store => store.getSupported);
@@ -19,11 +20,12 @@ export default function Review() {
     console.log(packages);
     console.log(getFeeling.feeling);
     console.log({getFeeling});
+    console.log(getUnderstanding.understanding)
 
     // axios post, sending data to database... and sends user to success page
     function postServer() {
         console.log('Clicked!');
-        axios.post('/api/feedback', {getFeeling, getUnderstanding, getSupported, getComments}) // why does it only send one? {getFeeling, getUnderstanding, getSupported, getComments} = null
+        axios.post('/api/feedback', getFeeling) // why does it only send one? {getFeeling, getUnderstanding, getSupported, getComments} = null
             .then(response => {
                 console.log('response', response);
 
@@ -45,7 +47,7 @@ export default function Review() {
             </div>
             <h1>Review</h1>
             <div id="results">
-                <p id = "feeling-num">Feeling: {getFeeling.feeling}</p>
+                <p id = "feeling-num">Feeling: {getFeeling}</p>
 
                 <p id = "understanding-num">Understanding: {getUnderstanding.understanding}</p>
 

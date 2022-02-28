@@ -10,7 +10,7 @@ export default function Success() {
     const history = useHistory();
     function homePage() {
         console.log('Click');
-        history.push('/Feeling');
+        history.push('/');
 
     }
     // when feedback is clicked, alert this

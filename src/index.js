@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 
@@ -17,72 +17,89 @@ import { logger } from 'redux-logger';
 //     return state;
 // };
 
+// HMMM 2??
+const getFeeling = (state = [], action) => {
+    // TODO - set book list with data from server
+    if (action.type === 'GET_FEELING') {
+        return action.payload.feeling
+    }
+    return state;
+}
+
 
 // Feeling Reducer 
-const getFeeling = (state = {
-    feeling: [],
-    
-    }, action) => {
-        
-        if (action.type === 'GET_FEELING') {
-            const {feeling} = action.payload;
-            return {
-                ...state,
-                feeling: (feeling),
-            }
-        }
-        return state;
-    }
+// const getFeeling = (state = {
+//     feeling: [],
+
+//     }, action) => {
+
+//         if (action.type === 'GET_FEELING') {
+//             const {feeling} = action.payload;
+//             return {
+//                 ...state,
+//                 feeling: (feeling),
+//             }
+//         }
+//         return state;
+//     }
 
 
 
 // Understanding Reducer
 const getUnderstanding = (state = {
     understanding: [],
-    
-    }, action) => {
-        
-        if (action.type === 'GET_UNDERSTANDING') {
-            const {understanding} = action.payload;
-            return {
-                ...state,
-                understanding: (understanding),
-            }
+
+}, action) => {
+
+    if (action.type === 'GET_UNDERSTANDING') {
+        const { understanding } = action.payload;
+        return {
+            ...state,
+            understanding: (understanding),
         }
-        return state;
     }
+    return state;
+}
 
 // Supported Reducer
-    const getSupported = (state = {
-        supported: [],
-        
-        }, action) => {
-            
-            if (action.type === 'GET_SUPPORTED') {
-                const {supported} = action.payload;
-                return {
-                    ...state,
-                    supported: (supported),
-                }
-            }
-            return state;
+const getSupported = (state = {
+    supported: [],
+
+}, action) => {
+
+    if (action.type === 'GET_SUPPORTED') {
+        const { supported } = action.payload;
+        return {
+            ...state,
+            supported: (supported),
         }
+    }
+    return state;
+}
 
 // Comments Reducer
-        const getComments = (state = {
-            comments: ('None'),
-            
-            }, action) => {
-                
-                if (action.type === 'GET_COMMENTS') {
-                    const {comments} = action.payload;
-                    return {
-                        ...state,
-                        comments: comments,
-                    }
-                }
-                return state;
-            }
+const getComments = (state = {
+    comments: ('None'),
+
+}, action) => {
+
+    if (action.type === 'GET_COMMENTS') {
+        const { comments } = action.payload;
+        return {
+            ...state,
+            comments: comments,
+        }
+    }
+    return state;
+}
+
+// simplified 
+const feedbackReducers = combineReducers({
+    feeling: getFeeling,
+    understanding: getUnderstanding,
+    supported: getSupported,
+    comment: getComment
+});
 
 
 
